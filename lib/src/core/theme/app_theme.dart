@@ -9,85 +9,73 @@ class AppTheme {
     useMaterial3: true,
     scaffoldBackgroundColor: const Color(0xFFF5F7FA),
     fontFamily: 'Poppins',
-    primaryColor:
-        Colors
-            .indigo, // primaryColor yerine colorScheme.primary kullanılması önerilir
+    primaryColor: Colors.indigo,
     appBarTheme: AppBarTheme(
-      backgroundColor:
-          Colors.indigo.shade900, // AppBar rengini tutarlı hale getirelim
+      backgroundColor: Colors.indigo.shade900,
       foregroundColor: Colors.white,
       elevation: 2,
       titleTextStyle: const TextStyle(
-        fontFamily: 'Poppins', // Font ailesini belirtelim
+        fontFamily: 'Poppins',
         fontSize: 24,
         fontWeight: FontWeight.bold,
         color: Colors.white,
       ),
       iconTheme: const IconThemeData(
         color: Colors.white,
-      ), // AppBar ikon renkleri
+      ),
     ),
-    cardTheme: CardTheme(
+    cardTheme: const CardThemeData(  // CardTheme -> CardThemeData
       elevation: 2,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(12))),
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         padding: const EdgeInsets.symmetric(
           vertical: 12,
           horizontal: 16,
-        ), // Yatay padding ekleyelim
+        ),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         textStyle: const TextStyle(
-          fontFamily: 'Poppins', // Font ailesini belirtelim
-          fontWeight: FontWeight.bold, // Buton yazılarını kalın yapalım
+          fontFamily: 'Poppins',
+          fontWeight: FontWeight.bold,
         ),
       ),
     ),
-    // Diğer tema ayarları...
-    tabBarTheme: TabBarTheme(
-      // POSScreen için TabBar temasını da buraya ekleyebiliriz
+    tabBarTheme: const TabBarThemeData(  // TabBarTheme -> TabBarThemeData
       labelColor: Colors.white,
-      unselectedLabelColor: Colors.indigo.shade100,
+      unselectedLabelColor: Color(0xFFE8EAF6),
       indicatorColor: Colors.white,
       indicatorSize: TabBarIndicatorSize.label,
-      labelStyle: const TextStyle(
-        fontSize:
-            24.0, // Tutarlılık için AppBar başlığı ile aynı veya yakın boyut
+      labelStyle: TextStyle(
+        fontSize: 24.0,
         fontWeight: FontWeight.bold,
         fontFamily: 'Poppins',
       ),
-      unselectedLabelStyle: const TextStyle(
-        fontSize:
-            22.0, // Tutarlılık için AppBar başlığı ile aynı veya yakın boyut
+      unselectedLabelStyle: TextStyle(
+        fontSize: 22.0,
         fontFamily: 'Poppins',
       ),
-      dividerColor:
-          Colors.transparent, // AppBar'daki divider ile çakışmaması için
+      dividerColor: Colors.transparent,
     ),
-    // Input dialogları için tema
     inputDecorationTheme: InputDecorationTheme(
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(8),
-        borderSide: BorderSide(color: Colors.grey.shade400),
+        borderSide: const BorderSide(color: Color(0xFFBDBDBD)),
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(8),
-        borderSide: BorderSide(color: Colors.indigo.shade700, width: 2),
+        borderSide: const BorderSide(color: Color(0xFF1976D2), width: 2),
       ),
-      labelStyle: TextStyle(color: Colors.grey.shade700),
+      labelStyle: const TextStyle(color: Color(0xFF616161)),
     ),
-    dialogTheme: DialogTheme(
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+    dialogTheme: const DialogThemeData(  // DialogTheme -> DialogThemeData
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(12))),
       titleTextStyle: TextStyle(
         fontWeight: FontWeight.bold,
         fontSize: 18,
-        color: Colors.grey.shade800,
+        color: Color(0xFF424242),
         fontFamily: 'Poppins',
       ),
     ),
   );
-
-  // İsteğe bağlı olarak karanlık tema
-  // static final ThemeData darkTheme = ThemeData(...);
 }
